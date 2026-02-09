@@ -8,7 +8,7 @@ include __DIR__ . '/../system/layout/header.php';
 
 <body class="bg-gradient-primary">
 
-   <div class="container">
+   <div class="container vh-100 d-flex justify-content-center align-items-center">
 
       <!-- Outer Row -->
       <div class="row justify-content-center">
@@ -48,7 +48,7 @@ include __DIR__ . '/../system/layout/header.php';
                                  Login
                               </button>
                               <div class="text-center">
-                                 <a class="small" href="register.html">Create an Account!</a>
+                                 <a class="small" href="register.php">Create an Account!</a>
                               </div>
                         </div>
                      </div>
@@ -88,7 +88,7 @@ include __DIR__ . '/../system/layout/header.php';
          <script>
             Swal.fire({
                icon: 'success',
-               title: 'Login Berhasil Sebagai',
+               title: 'Login Berhasil !😉',
                text: '<?= $_SESSION['success']; ?> (Admin)',
                timer: 2200,
                showConfirmButton: false
@@ -100,7 +100,7 @@ include __DIR__ . '/../system/layout/header.php';
          <script>
             Swal.fire({
                icon: 'success',
-               title: 'Login Berhasil Sebagai',
+               title: 'Login Berhasil !😉',
                text: '<?= $_SESSION['success']; ?> (Petugas)',
                timer: 2200,
                showConfirmButton: false

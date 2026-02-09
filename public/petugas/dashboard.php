@@ -5,7 +5,7 @@ require_once '../../system/config.php';
 include '../../system/layout/header.php';
 include '../../system/layout/sidebar.php';
 
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'petugas') {
    header("Location: ../login.php");
    exit;
 }
@@ -97,11 +97,11 @@ $username = $_SESSION['username'];
          <!-- Pending Requests Card Example -->
          <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
-               <div class="card-body">
+               <div class="gcard-body">
                   <div class="row no-gutters align-items-center">
                      <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                           Petugas</div>
+                           Jadwal</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $total_petugas ?></div>
                      </div>
                      <div class="col-auto">

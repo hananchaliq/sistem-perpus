@@ -68,11 +68,11 @@ require_once '../../system/config.php';
             </a>
          </li>
 
-         <!-- Pengurus -->
+         <!-- Petugas -->
          <li class="nav-item">
-            <a class="nav-link" href="<?= $base ?>/public/admin/pengurus.php">
+            <a class="nav-link" href="<?= $base ?>/public/admin/petugas.php">
                <i class="fas fa-user fa-fw"></i>
-               <span>Pengurus</span>
+               <span>Petugas</span>
             </a>
          </li>
 

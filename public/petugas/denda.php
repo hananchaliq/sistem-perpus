@@ -10,14 +10,11 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
    exit;
 }
 
-$stmt = $pdo->prepare("select * from pengurus");
+$stmt = $pdo->prepare("select d.*, p.status, s.nama_siswa from denda d join peminjaman p on d.id_peminjaman = p.id_peminjaman join siswa s on p.id_siswa = s.id_siswa");
 $stmt->execute();
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
 ?>
-
-
 <!-- Main Content -->
 <div id="content">
 
@@ -27,8 +24,8 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
    <div class="container-fluid">
 
       <!-- Page Heading -->
-      <h1 class="h3 mb-2 text-gray-800">Daftar Pengurus</h1>
-      <p class="mb-4">Tabel pengurus digunakan untuk menyimpan data petugas perpustakaan yang memiliki hak akses dalam sistem. Data yang disimpan meliputi identitas pengurus, username, dan peran atau hak akses, sehingga setiap proses pengelolaan data buku, peminjaman, dan denda dapat dipertanggungjawabkan.</p>
+      <h1 class="h3 mb-2 text-gray-800">Daftar Denda</h1>
+      <p class="mb-4">Tabel denda berfungsi untuk mencatat biaya atau sanksi yang dikenakan kepada peminjam apabila terjadi keterlambatan pengembalian buku atau pelanggaran aturan peminjaman. Dengan adanya tabel ini, pengelolaan denda dapat dilakukan secara tertib, transparan, dan terintegrasi dengan data peminjaman.</p>
       <p class="mb-4">DataTables adalah plugin pihak ketiga yang digunakan untuk menghasilkan tabel demo di bawah ini. Untuk informasi lebih lanjut tentang DataTables, silakan kunjungi <a target="_blank"
             href="https://datatables.net">official DataTables documentation</a>.</p>
 
@@ -44,22 +41,24 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                      <tr>
                         <th>ID</th>
                         <th>Nama</th>
-                        <th>Gender</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Email</th>
+                        <th>Denda</th>
+                        <th>Nominal</th>
+                        <th>Status Denda</th>
+                        <th>Status Pengembalian</th>
+                        <th>Keterangan</th>
                      </tr>
                   </thead>
                   <?php foreach ($data as $s)
-                     echo "<tr><td>" . $s['id_pengurus'] . "</td><td>" . $s['nama_pengurus'] . "</td><td>" . $s['jenis_kelamin'] . "</td><td>" . $s['username'] . "</td><td>" . $s['password'] . "</td><td>" . $s['email'] . "</td></tr>"; ?>
+                     echo "<tr><td>" . $s['id_denda'] . "</td><td>" . $s['nama_siswa'] . "</td><td>" . $s['nama_denda'] . "</td><td>" . $s['nominal_denda'] . "</td><td>" . $s['status_denda'] . "</td><td>" . $s['status'] . "</td><td>" . $s['keterangan_denda'] . "</td></tr>"; ?>
                   <tfoot>
                      <tr>
                         <th>ID</th>
                         <th>Nama</th>
-                        <th>Gender</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Email</th>
+                        <th>Denda</th>
+                        <th>Nominal</th>
+                        <th>Status Denda</th>
+                        <th>Status Pengembalian</th>
+                        <th>Keterangan</th>
                      </tr>
                   </tfoot>
                </table>

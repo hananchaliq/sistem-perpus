@@ -13,7 +13,7 @@ require_once __DIR__ . '/../../system/config.php';
    <meta name="description" content="">
    <meta name="author" content="">
 
-   <title>SB Admin 2 - Dashboard</title>
+   <title>E - Perpustakaan</title>
 
    <!-- Custom fonts for this template-->
    <link href="<?= $base ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

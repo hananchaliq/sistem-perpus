@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    // cek apakah email ada di database
    $stmt = $pdo->prepare("SELECT id_user, username, password, level FROM user WHERE email = ? LIMIT 1");
    $stmt->bindParam(1, $email);
-   $stmt->execute();
+   $stmt->execute(); 
    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
    if ($result) {
@@ -19,15 +19,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       // verifikasi password hash
       if (password_verify($password, $row['password'])) {
          $_SESSION['admin_id'] = $row['id_user'];
-         $_SESSION['admin_name'] = $row['username'];
+         $_SESSION['username'] = $row['username'];
          $_SESSION['role'] = $row['level'];
 
-         $_SESSION['success'] = "Login berhasil, selamat datang " . $row['username'];
+         $_SESSION['success'] = "Selamat datang, Anda login sebagai " . $row['username'];
          header("Location:" . $base . "public/login.php");
          exit;
       } else {
          // password salah
-         $_SESSION['error'] = "Password salah";
+         $_SESSION['error'] = "Password yang anda masukkan salah";
          header("Location:" . $base . "public/login.php");
          exit;
 

@@ -1,5 +1,5 @@
 <?php
-$password = '123';
+$password = 'eko123';
 
 // Generate bcrypt (default cost)
 $hash = password_hash($password, PASSWORD_BCRYPT);
