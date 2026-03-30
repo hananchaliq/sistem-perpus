@@ -1,5 +1,5 @@
 <?php
-require_once '../../system/config.php';
+require_once __DIR__ . '/../config.php';
 ?>
 <!-- Footer -->
 <footer class="sticky-footer bg-white">
@@ -49,7 +49,7 @@ require_once '../../system/config.php';
 <script src="<?= $base ?>vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src=".<?= $base ?>js/sb-admin-2.min.js"></script>
+<script src="<?= $base ?>js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
 <script src="<?= $base ?>vendor/chart.js/Chart.min.js"></script>

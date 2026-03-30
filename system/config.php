@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $db = 'nan_tugas_perpus';
-$user = 'root';
-$pass = '';
+$user = 'sistem_perpus';
+$pass = 'perpus_123';
 $charset = 'utf8mb4';
 $base = '/project-sistem-perpus/';
 

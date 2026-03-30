@@ -1,14 +1,14 @@
 <?php
 
-require_once '../system/config.php';
 session_start();
+require_once '../../system/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $email = trim($_POST['email']);
    $password = trim($_POST['password']);
 
    // cek apakah email ada di database
-   $stmt = $pdo->prepare("SELECT id_user, username, password, level FROM user WHERE email = ? LIMIT 1");
+   $stmt = $pdo->prepare("SELECT id_user, username, password, level FROM users WHERE email = ? LIMIT 1");
    $stmt->bindParam(1, $email);
    $stmt->execute(); 
    $result = $stmt->fetch(PDO::FETCH_ASSOC);

@@ -5,7 +5,8 @@ require_once '../../system/config.php';
 include '../../system/layout/header.php';
 include '../../system/layout/sidebar.php';
 
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'petugas') {
+   $tipe = 'petugas';
    header("Location: ../login.php");
    exit;
 }

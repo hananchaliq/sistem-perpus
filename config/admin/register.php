@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../system/config.php';
+require_once __DIR__ . '/../../system/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    // cek username atau email sudah terdaftar atau belum
    $cek = $pdo->prepare(
       "SELECT id_user 
-       FROM user 
+       FROM users 
        WHERE (username = ? OR email = ?)
        AND level = 'peminjam'
        LIMIT 1"
@@ -39,10 +39,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
    // simpan ke database
    $stmt = $pdo->prepare(
-      "INSERT INTO user (nama, username, email, password, level)
-       VALUES (?, ?, ?, ?, ?)"
+      "INSERT INTO users (username, email, password, level)
+       VALUES (?, ?, ?, ?)"
    );
-   $stmt->execute([$name, $username, $email, $password, $level]);
+   $stmt->execute([strtolower($username), $email, $password, $level]);
 
    header("Location: " . $base . "public/register.php?status=success");
    exit;

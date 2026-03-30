@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once __DIR__ . '/../system/config.php';
-include __DIR__ . '/../system/layout/header.php';
+require_once __DIR__ . '../../system/config.php';
+include __DIR__ . '../../system/layout/header.php';
 
 ?>
 
@@ -28,7 +28,11 @@ include __DIR__ . '/../system/layout/header.php';
                            <div class="text-center">
                               <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                            </div>
-                           <form class="user" action="../action/login.php" method="POST">
+                           <div class=" mb-4 flex flex-col items-center justify-center">
+                              <p class=" text-green-400">Email : hananxpplg@gmail.com</p>
+                              <p class=" text-yellow-400">Password : hanan</p>
+                           </div>
+                           <form class="user" action="<?= $base ?>config/admin/login.php" method="POST">
                               <div class="form-group">
                                  <input type="email" class="form-control form-control-user" name="email" id="email"
                                     aria-describedby="emailHelp" placeholder="Enter Email Address..." required>
@@ -50,6 +54,7 @@ include __DIR__ . '/../system/layout/header.php';
                               <div class="text-center">
                                  <a class="small" href="register.php">Create an Account!</a>
                               </div>
+                           </form>
                         </div>
                      </div>
                   </div>

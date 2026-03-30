@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../system/config.php';
+require_once __DIR__ . '/../config.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,5 +24,7 @@ require_once __DIR__ . '/../../system/config.php';
    <!-- Custom styles for this template-->
    <link href="<?= $base ?>css/sb-admin-2.css" rel="stylesheet">
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
